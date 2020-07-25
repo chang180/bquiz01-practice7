@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<?php include_once "base.php";?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0068)?do=title -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -18,10 +19,9 @@
 			<div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;"></div>
 		</div>
 	</div>
-	<iframe style="display:none;" name="back" id="back"></iframe>
 	<div id="main">
-		<a title="" href="?">
-			<div class="ti" style="background:url('use/'); background-size:cover;"></div>
+		<a title="<?=$title['text'];?>" href="index.php">
+			<div class="ti" style="background:url('img/<?=$title['name'];?>'); background-size:cover;"></div>
 			<!--標題-->
 		</a>
 		<div id="ms">
@@ -70,7 +70,7 @@
 				</div>
 				<div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
 					<span class="t">進站總人數 :
-						1 </span>
+						<?=$total;?> </span>
 				</div>
 			</div>
 			<div class="di" style="height:540px; border:#999 1px solid; width:76.5%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
@@ -93,7 +93,7 @@
 		</div>
 		<div style="clear:both;"></div>
 		<div style="width:1024px; left:0px; position:relative; background:#FC3; margin-top:4px; height:123px; display:block;">
-			<span class="t" style="line-height:123px;"></span>
+			<span class="t" style="line-height:123px;"><?=$bottom;?></span>
 		</div>
 	</div>
 
