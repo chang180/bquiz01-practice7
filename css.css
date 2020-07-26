@@ -96,6 +96,12 @@ body
 	background:url(icon/menu4.fw.png) center no-repeat;
 	background-size:cover;
 }
+.mw{
+	display:none;
+}
+.mw:hover{
+	display:block;
+}
 #lf
 {
 	height:540px;
@@ -157,5 +163,8 @@ input:focus,button:focus
 {
 	color:#0CF;
 	cursor:pointer;
+	text-decoration:none;
+}
+a{
 	text-decoration:none;
 }

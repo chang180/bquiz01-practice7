@@ -46,6 +46,7 @@ public function find($arg){
         foreach($arg as $k=>$v) $tmp[]="`$k`='$v'";
         $sql.=" WHERE ".implode(" && ",$tmp);
     }else $sql.= "WHERE `id`='$arg'";
+    // echo $sql;
     return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }
 
@@ -57,7 +58,8 @@ public function save($arg){
     if(isset($arg['id'])){
         foreach ($arg as $k=>$v) $tmp[]="`$k`='$v'";
         $sql=sprintf("UPDATE %s SET %s WHERE `id`='%s'",$this->table,implode(",",$tmp),$arg['id']);
-    }else $sql=sprintf("INSERT INTO %s (`%s`) VALUES ('%s')",$this->table,implode("`,`",array_keys($arg)),implode($arg));
+    }else $sql=sprintf("INSERT INTO %s (`%s`) VALUES ('%s')",$this->table,implode("`,`",array_keys($arg)),implode("','",$arg));
+    // echo $sql;
     return $this->pdo->exec($sql);
 }
 }
@@ -76,8 +78,8 @@ $Total=new DB('total');
 $Bottom=new DB('bottom');
 $Admin=new DB('admin');
 
-$total=$Total->find(1)['total'];
-$bottom=$Bottom->find(1)['bottom'];
+$total=$Total->find(1);
+$bottom=$Bottom->find(1);
 
 $title=$Title->find(['sh'=>1]);
 
